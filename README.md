@@ -21,5 +21,18 @@ To run this script, you need to have the following Python libraries installed:
 
 You can install these packages using `pip`:
 
-```bash```
+```bash
 pip install scapy pyyaml
+```
+
+## Setup
+
+1.  **Clone the Repository**:
+    ```bash
+    git clone your-gitlab-repo-url
+    cd your-gitlab-repo-name
+    ```
+2. **Configuration
+   ```
+   Before running the script, configure ip_address.yaml and the email settings in ip_reachibility.py.
+   ```
