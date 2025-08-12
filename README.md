@@ -36,3 +36,5 @@ pip install scapy pyyaml
     ```
     Before running the script, configure ip_address.yaml and the email settings in ip_reachibility.py.
     ```
+3.  Email Configuration
+    Update the email settings in the Email section in the script ip_reachibility.py
