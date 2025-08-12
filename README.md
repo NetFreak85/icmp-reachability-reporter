@@ -1,24 +1,25 @@
-# ICMP Reachability Checker
+# 📡 ICMP Reachability Checker
 
-This Python script, `ip_reachibility.py`, checks the ICMP reachability of multiple IP addresses concurrently using threading. It reads a list of IP addresses from a YAML configuration file, performs a series of ICMP pings to each, and then generates and emails an HTML report of the results.
+This Python script performs ICMP (Internet Control Message Protocol) reachability tests on a list of IP addresses. It's designed to concurrently ping multiple devices, collect statistics, and generate an HTML report that's sent via email.
 
-## Features
+The script uses `scapy` for packet manipulation and `concurrent.futures` for efficient, multi-threaded execution.
 
-- **Concurrent Execution**: Uses `concurrent.futures.ThreadPoolExecutor` for simultaneous ICMP pings to multiple IP addresses, improving performance.
-- **Configurable**: Ping parameters like packet count, timeout, and delay are customizable in the `ip_address.yaml` file.
-- **YAML Configuration**: IP addresses and their descriptions are stored in `ip_address.yaml`, making it easy to add or remove devices.
-- **HTML Report Generation**: Creates a detailed HTML report with RTT (Round-Trip Time) statistics (min, max, avg) and packet loss percentage for each IP address.
-- **Email Notifications**: Automatically sends the generated HTML report via email to a configured recipient.
+## 📝 Features
 
-## Prerequisites
+* **Concurrent Pinging**: Tests multiple IP addresses at the same time using threading.
+* **YAML Configuration**: Easily configure IP addresses, descriptions, and ICMP parameters in a `ip_address.yaml` file.
+* **Detailed Statistics**: Collects and reports on RTT (Round Trip Time) statistics (min, max, avg) and packet loss.
+* **HTML Reporting**: Generates a clean, human-readable HTML report summarizing the results.
+* **Email Notifications**: Sends the HTML report as an email using an SMTP server.
 
-- **Python 3.x**: The script is written in Python 3.
-- **Required Python Libraries**:
-  - `PyYAML`: For parsing the YAML configuration file.
-  - `scapy`: For sending and receiving ICMP packets.
+## ⚙️ Prerequisites
 
-You can install these libraries using pip:
+To run this script, you need to have the following Python libraries installed:
 
-```bash
-pip install pyyaml scapy
+* **`scapy`**: For sending and receiving network packets.
+* **`PyYAML`**: To parse the configuration file.
 
+You can install these packages using `pip`:
+
+```bash```
+pip install scapy pyyaml
