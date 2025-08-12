@@ -32,7 +32,7 @@ pip install scapy pyyaml
     git clone your-gitlab-repo-url
     cd your-gitlab-repo-name
     ```
-2. **Configuration
-   ```
-   Before running the script, configure ip_address.yaml and the email settings in ip_reachibility.py.
-   ```
+2.  **Configuration
+    ```
+    Before running the script, configure ip_address.yaml and the email settings in ip_reachibility.py.
+    ```
