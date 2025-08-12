@@ -58,7 +58,7 @@ Note: This script is configured to use an unauthenticated SMTP server. If your s
 
 3. Running the Script
 
-Execute the script from your terminal:
+   Execute the script from your terminal:
 
 ```bash
     python ip_reachibility.py
@@ -66,12 +66,12 @@ Execute the script from your terminal:
 
 The script will:
 
-* 1. Read the IP addresses and parameters from ip_address.yaml.
-* 2. Ping each IP address concurrently.
-* 3. Collect all the results.
-* 4. Generate a detailed HTML report.
-* 5. Send the report to the configured email address.
-* 6. Exit.
+* 1 Read the IP addresses and parameters from ip_address.yaml.
+* 2 Ping each IP address concurrently.
+* 3 Collect all the results.
+* 4 Generate a detailed HTML report.
+* 5 Send the report to the configured email address.
+* 6 Exit.
 
 ## ⚙️ Code Details
 
