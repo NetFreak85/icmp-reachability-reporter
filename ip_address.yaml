@@ -1,0 +1,16 @@
+# ICMP Settings for ICMP packets
+icmp:
+    count: 5
+    timeout: 2
+    ttl: 100
+    delay_inter_packages: 1
+    verbose: False
+
+# List of IP addresses
+ip_address:
+    - ip: "8.8.8.8"
+      description: "Google DNS Public Service"
+    - ip: "151.101.0.81" 
+      description: "UK BBC News"
+    - ip: "34.147.120.111"
+      desription: "Spanish Sport News"
