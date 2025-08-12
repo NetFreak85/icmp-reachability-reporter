@@ -36,5 +36,17 @@ pip install scapy pyyaml
     ```
     Before running the script, configure ip_address.yaml and the email settings in ip_reachibility.py.
     ```
-3.  Email Configuration
-    Update the email settings in the Email section in the script ip_reachibility.py
+
+⚙️ Code Details
+
+```ping_ip(ip_info, icmp_params)```
+This function handles the core ICMP pinging logic for a single IP address. It sends a specified number of packets, measures the RTT for each successful reply, and calculates the minimum, maximum, and average RTT. It returns a dictionary containing all the statistics.
+
+```ICMP_reachibility()```
+This is the main function that orchestrates the concurrent execution. It reads the YAML configuration, creates a ThreadPoolExecutor, and submits a ping_ip task for each IP address. It then gathers the results from all the threads and returns a list of result dictionaries.
+
+```generate_network_report_html(data)```
+This function takes the list of results and dynamically generates a single HTML string. It iterates through the data for each IP, formats the statistics, and creates a visually appealing report with status badges (Reachable, Partial Loss, Unreachable) based on the packet loss percentage.
+
+```Main Program (if name == 'main':)```
+The main execution block calls ICMP_reachibility() to get the data, passes the data to generate_network_report_html() to create the report, and finally uses smtplib to connect to the SMTP server and send the email with the attached HTML report.
