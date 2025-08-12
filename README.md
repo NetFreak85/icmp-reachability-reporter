@@ -28,17 +28,31 @@ pip install scapy pyyaml
 ## Setup
 
 1.  **Clone the Repository**:
-    ```bash
+```bash
     git clone https://github.com/NetFreak85/icmp-reachability-reporter.git
     cd icmp-reachability-reporter
-    ```
+```
 2. Configure ip_reachibility.py for Email
     Modify the Email Var Config Section in the ip_reachibility.py script to match your environment.
-```
+```bash
     sender_email: The email address from which the report will be sent.
     receiver_email: The email address to which the report will be sent.
     smtp_server: The address of your SMTP server.
     smtp_port: The port for your SMTP server (e.g., 25 for unencrypted, 587 for TLS/STARTTLS, 465 for SSL).
+```
+    Email Var Config Section in ip_reachibility.py:
+```python
+    # Sender Email Address
+    sender_email = "inpro.base@bbva.com"
+
+    # Receiver Email Address
+    receiver_email = "joserafael.guerra.tech@bbva.com"
+
+    # SMTP Server Address
+    smtp_server = "smtp.es.nextgen.igrupobbva"
+
+    # SMTP Port
+    smtp_port = 25
 ```
 ## ⚙️ Code Details
 
