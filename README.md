@@ -64,6 +64,15 @@ Execute the script from your terminal:
     python ip_reachibility.py
 ```
 
+    The script will:
+
+* **Read the IP addresses and parameters from ip_address.yaml.
+* **Ping each IP address concurrently.
+* **Collect all the results.
+* **Generate a detailed HTML report.
+* **Send the report to the configured email address.
+* **Exit.
+
 ## ⚙️ Code Details
 
 ```ping_ip(ip_info, icmp_params)```
