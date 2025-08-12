@@ -53,6 +53,17 @@ Email Var Config Section in ip_reachibility.py:
     # SMTP Port
     smtp_port = 25
 ```
+
+Note: This script is configured to use an unauthenticated SMTP server. If your server requires authentication, you will need to modify the smtplib.SMTP() call and add server.login() with your credentials.
+
+3. Running the Script
+
+Execute the script from your terminal:
+
+```bash
+    python ip_reachibility.py
+```
+
 ## ⚙️ Code Details
 
 ```ping_ip(ip_info, icmp_params)```
