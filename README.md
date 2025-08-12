@@ -29,10 +29,10 @@ pip install scapy pyyaml
 
 1.  **Clone the Repository**:
     ```bash
-    git clone your-gitlab-repo-url
-    cd your-gitlab-repo-name
+    git clone https://github.com/NetFreak85/icmp-reachability-reporter.git
+    cd icmp-reachability-reporter
     ```
-2.  **Configuration
+2.  Configuration
     ```
     Before running the script, configure ip_address.yaml and the email settings in ip_reachibility.py.
     ```
