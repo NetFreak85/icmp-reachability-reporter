@@ -37,7 +37,7 @@ pip install scapy pyyaml
     Before running the script, configure ip_address.yaml and the email settings in ip_reachibility.py.
     ```
 
-⚙️ Code Details
+## ⚙️ Code Details
 
 ```ping_ip(ip_info, icmp_params)```
 This function handles the core ICMP pinging logic for a single IP address. It sends a specified number of packets, measures the RTT for each successful reply, and calculates the minimum, maximum, and average RTT. It returns a dictionary containing all the statistics.
