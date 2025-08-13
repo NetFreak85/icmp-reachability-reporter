@@ -112,7 +112,7 @@ Note: This script is configured to use an unauthenticated SMTP server. If your s
  * **1.** Read the Configuration File ip_address.yaml with python pyyaml library. This file will likely contain a list of IP addresses and the ICMP parameters (like count, timeout, ttl).
  * **2.** Performing the ICMP Tests Concurrently based on each IP Address obtained from the file, the script will calculate de Round Trip Timer (RTT).
  * **3.** Collect all the results and save them in a list of dictionaries.
- * **4.** Generate a detailed HTML report with all the results obtaineds. The Jinja2 templating engine is a powerful and easy-to-use library for creating HTML reports from data. 
+ * **4.** With the Jinja2 template, the script will generate a detailed HTML report with all the results obtaineds in the previous task. 
  * **5.** Send the report to the configured email address.
  * **6.** Exit.
 
