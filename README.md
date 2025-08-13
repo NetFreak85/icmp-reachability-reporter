@@ -64,6 +64,50 @@ Note: This script is configured to use an unauthenticated SMTP server. If your s
     python ip_reachibility.py
 ```
 
+4. If you need
+
+    ```python
+    # Var Section Configuration
+    
+    # --- SMTP Server Configuration ---
+        smtp_server = "smtp.your-provider.com" # e.g., "smtp.gmail.com", "smtp.office365.com"
+        smtp_port = 587 # Common ports: 587 (STARTTLS) or 465 (SSL/TLS)
+        use_tls = True # Set to True for STARTTLS (port 587)
+        use_ssl = False # Set to True for SSL/TLS (port 465)
+
+    # --- Email Credentials ---
+        sender_email = "your-email@example.com"
+        sender_password = "your-password-or-app-password" # Use an app password if available
+
+    # --- Email Content ---
+        receiver_email = "recipient@example.com"
+        subject = "your email subject"
+
+    # --- Object msg definition and SMTP authentication ---
+    # Create the email message
+        msg = MIMEMultipart()
+        msg['From'] = sender_email
+        msg['To'] = receiver_email
+        msg['Subject'] = subject
+        msg.attach(MIMEText(body, 'plain'))
+
+
+        if use_ssl:
+            # Use SSL/TLS connection (port 465)
+            server = smtplib.SMTP_SSL(smtp_server, smtp_port)
+        elif use_tls:
+            # Use STARTTLS connection (port 587)
+            server = smtplib.SMTP(smtp_server, smtp_port)
+            server.starttls()
+        else:
+            # Use a non-encrypted connection (not recommended)
+            server = smtplib.SMTP(smtp_server, smtp_port)
+
+        # Log in to the server
+        server.login(sender_email, sender_password)
+    
+   ```
+
 ## The script will:
 
  * **1.** Read the IP addresses and parameters from ip_address.yaml.
