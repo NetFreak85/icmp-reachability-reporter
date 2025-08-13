@@ -42,13 +42,13 @@ pip install scapy pyyaml
 Email Var Config Section in ip_reachibility.py:
 ```python
     # Sender Email Address
-    sender_email = "inpro.base@bbva.com"
+    sender_email = ""
 
     # Receiver Email Address
-    receiver_email = "joserafael.guerra.tech@bbva.com"
+    receiver_email = ""
 
     # SMTP Server Address
-    smtp_server = "smtp.es.nextgen.igrupobbva"
+    smtp_server = ""
 
     # SMTP Port
     smtp_port = 25
