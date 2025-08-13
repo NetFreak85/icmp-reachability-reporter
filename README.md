@@ -22,7 +22,7 @@ To run this script, you need to have the following Python libraries installed:
 You can install these packages using `pip`:
 
 ```bash
-pip install scapy pyyaml
+pip install scapy pyyaml Jinja2
 ```
 
 ## Setup
@@ -109,7 +109,10 @@ Note: This script is configured to use an unauthenticated SMTP server. If your s
 
 ## The script will:
 
- * **1.** Read the IP addresses list and parameters from ip_address.yaml, This file contain all the ICMP parameters necesary for the script to work (count of packets, verbose mode, ttl, etc.). 
+ * **1.** Reading the Configuration File ip_address.yaml with python pyyaml library. This file will likely contain a list of IP addresses and the ICMP parameters (like count, timeout, ttl).
+ *     ```bash
+        Installation: pip install pyyaml
+ *     '''
  * **2.** For each IP Address obtained from the file, the scraping will generate a threath concurrently to perform the ICMP test calculating de Round Trip Timer (RTT).
  * **3.** Collect all the results and save them in a list of dictionaries.
  * **4.** Generate a detailed HTML report with all the results obtaineds.
