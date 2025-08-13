@@ -64,7 +64,7 @@ Note: This script is configured to use an unauthenticated SMTP server. If your s
     python ip_reachibility.py
 ```
 
-4. If you need
+4. If its mandatory for you use SMTP with autentication, copy the following code and replace the variables with your SMTP server and user/app credentials
 
     ```python
     # Var Section Configuration
