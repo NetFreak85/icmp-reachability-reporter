@@ -110,11 +110,9 @@ Note: This script is configured to use an unauthenticated SMTP server. If your s
 ## The script will:
 
  * **1.** Reading the Configuration File ip_address.yaml with python pyyaml library. This file will likely contain a list of IP addresses and the ICMP parameters (like count, timeout, ttl).
- *     Installation: pip install pyyaml
+       Installation: pip install pyyaml
  * **2.** Performing the ICMP Tests Concurrently
- * For this, you'll need to use a library that can send ICMP echo requests (pings) and a way to handle concurrency. The scapy library is a good choice for the ICMP tests, and Python's concurrent.futures module is selected for running these tests in parallel.
-        Installation: pip install scapy
- For each IP Address obtained from the file, the scraping will generate a threath concurrently to perform the ICMP test calculating de Round Trip Timer (RTT).
+       For each IP Address obtained from the file, the script will generate a threath concurrently to perform the ICMP test calculating de Round Trip Timer (RTT).
  * **3.** Collect all the results and save them in a list of dictionaries.
  * **4.** Generate a detailed HTML report with all the results obtaineds.
  * **5.** Send the report to the configured email address.
