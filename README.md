@@ -71,13 +71,13 @@ Note: This script is configured to use an unauthenticated SMTP server. If your s
     
     # --- SMTP Server Configuration ---
         smtp_server = "smtp.your-provider.com" # e.g., "smtp.gmail.com", "smtp.office365.com"
-        smtp_port = 587 # Common ports: 587 (STARTTLS) or 465 (SSL/TLS)
-        use_tls = True # Set to True for STARTTLS (port 587)
-        use_ssl = False # Set to True for SSL/TLS (port 465)
+        smtp_port = 587                        # Common ports: 587 (STARTTLS) or 465 (SSL/TLS)
+        use_tls = True                         # Set to True for STARTTLS (port 587)
+        use_ssl = False                        # Set to True for SSL/TLS (port 465)
 
     # --- Email Credentials ---
         sender_email = "your-email@example.com"
-        sender_password = "your-password-or-app-password" # Use an app password if available
+        sender_password = "your-password-or-app-password"
 
     # --- Email Content ---
         receiver_email = "recipient@example.com"
@@ -90,7 +90,6 @@ Note: This script is configured to use an unauthenticated SMTP server. If your s
         msg['To'] = receiver_email
         msg['Subject'] = subject
         msg.attach(MIMEText(body, 'plain'))
-
 
         if use_ssl:
             # Use SSL/TLS connection (port 465)
@@ -110,10 +109,10 @@ Note: This script is configured to use an unauthenticated SMTP server. If your s
 
 ## The script will:
 
- * **1.** Read the IP addresses and parameters from ip_address.yaml.
- * **2.** Ping each IP address concurrently.
- * **3.** Collect all the results.
- * **4.** Generate a detailed HTML report.
+ * **1.** Read the IP addresses list and parameters from ip_address.yaml, This file contain all the ICMP parameters necesary for the script to work (count of packets, verbose mode, ttl, etc.). 
+ * **2.** For each IP Address obtained from the file, the scraping will generate a threath concurrently to perform the ICMP test calculating de Round Trip Timer (RTT).
+ * **3.** Collect all the results and save them in a list of dictionaries.
+ * **4.** Generate a detailed HTML report with all the results obtaineds.
  * **5.** Send the report to the configured email address.
  * **6.** Exit.
 
