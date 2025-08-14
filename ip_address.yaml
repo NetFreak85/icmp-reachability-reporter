@@ -1,10 +1,10 @@
 # ICMP Settings for ICMP packets
 icmp:
-    count: 5
-    timeout: 2
-    ttl: 100
-    delay_inter_packages: 1
-    verbose: False
+    count: 5                    # Default Count for ICMP, modify it if you need more packets in your test
+    timeout: 2                  # Timeout in the sr call (in secs)
+    ttl: 255                    # Time to live field in the IP Header
+    delay_inter_packages: 0     # Time to wait between packets, only increase this number in a congested network
+    verbose: False              # Just use when need to print the values for cli terminal
 
 # List of IP addresses
 ip_address:
