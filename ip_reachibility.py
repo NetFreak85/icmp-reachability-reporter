@@ -259,7 +259,7 @@ def ping_ip(ip_info, icmp_params):
         start_time = time.time()
 
         # Send and receive a single packet
-        ans, _ = sr(IP(dst=ip_address) / ICMP(), timeout=icmp_params.get('timeout', 2), verbose=False)
+        ans, _ = sr(IP(dst=ip_address, ttl=icmp_params.get('ttl',66)) / ICMP(), timeout=icmp_params.get('timeout', 2), verbose=False, inter=icmp_params.get('delay_inter_packages',0.1))
 
         # Stop measuring the time for RTT calculation
         end_time = time.time()
